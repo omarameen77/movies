@@ -36,11 +36,7 @@
    git pull origin dev
    ```
 
-5- اعمل Clone للريبو:
 
-   ```bash
-   git clone https://github.com/omarameen77/movies.git
-   ```
    
 # 📊 Project Structure
 
