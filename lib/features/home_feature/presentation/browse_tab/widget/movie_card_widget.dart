@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:movies/features/movies_details/presentation/screen/movies_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../../core/shared/custom_rating_card.dart';
@@ -17,18 +18,18 @@ class MovieCard extends StatelessWidget {
 
       onTap: () {
         // TODO: Navigate to movie details
-        // Navigator.push(
-        //   context,
-        //   PageRouteBuilder(
-        //     transitionDuration: const Duration(milliseconds: 400),
-        //     pageBuilder: (context, animation, secondaryAnimation) =>
-        //         MoviesDetailsScreen(movieId: movie.id!),
-        //     transitionsBuilder:
-        //         (context, animation, secondaryAnimation, child) {
-        //           return FadeTransition(opacity: animation, child: child);
-        //         },
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            transitionDuration: const Duration(milliseconds: 400),
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                MoviesDetailsScreen(movieId: movie.id!),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+          ),
+        );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

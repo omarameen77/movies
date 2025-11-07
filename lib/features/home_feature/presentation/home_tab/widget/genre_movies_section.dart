@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies/core/helper/responsive.dart';
 import 'package:movies/core/theme/app_colors.dart';
+import 'package:movies/core/theme/app_text_theme.dart';
 import 'package:movies/features/home_feature/data/model_home/home_model.dart';
 
 import 'movies_card.dart';
@@ -33,23 +34,15 @@ class GenreMoviesSection extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style:TextStyleHelper.font17WhiteRegular
                 ),
                 GestureDetector(
                   onTap: onSeeMorePressed,
                   child: Row(
-                    children: const [
+                    children:  [
                       Text(
                         "See More",
-                        style: TextStyle(
-                          color: AppColors.gold,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style:TextStyleHelper.font10goldBold
                       ),
                       SizedBox(width: 4),
                       Icon(
