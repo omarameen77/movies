@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/core/helper/responsive.dart';
 import 'package:movies/core/theme/app_colors.dart';
 import 'package:movies/features/home_feature/business_logic/cubit/movies_cubit.dart';
+import 'package:movies/features/movies_details/presentation/screen/movies_details_screen.dart';
 
 
 class SliderMovie extends StatelessWidget {
@@ -28,22 +29,22 @@ class SliderMovie extends StatelessWidget {
                 .map(
                   (item) => GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   PageRouteBuilder(
-                      //     transitionDuration: const Duration(milliseconds: 400),
-                      //     pageBuilder:
-                      //         (context, animation, secondaryAnimation) =>
-                      //             MoviesDetailsScreen(movieId:item.id!),
-                      //     transitionsBuilder:
-                      //         (context, animation, secondaryAnimation, child) {
-                      //           return FadeTransition(
-                      //             opacity: animation,
-                      //             child: child,
-                      //           );
-                      //         },
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          transitionDuration: const Duration(milliseconds: 400),
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  MoviesDetailsScreen(movieId:item.id!),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                        ),
+                      );
                     },
                     child: Container(
                       padding: EdgeInsets.all(2),
