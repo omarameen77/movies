@@ -63,64 +63,62 @@ class _HomeTabsState extends State<HomeTabs> {
           MoviesCubit(MoviesRepository(moviesWebService: MoviesWebService()))
             ..getMoviesList(),
       child: Scaffold(
-        body: SafeArea(
-          child: BlocBuilder<MoviesCubit, MoviesState>(
-            builder: (context, state) {
-              if (state is MoviesLoaded) {
-                final movies = state.moviesList;
-                final cubit = context.read<MoviesCubit>();
-
-                return RefreshIndicator(
-                  color: AppColors.gold,
-                  onRefresh: () async {
-                    await cubit.getMoviesList();
-
-                    setState(() {
-                      _selectRandomGenres();
-                    });
-                  },
-                  child: SingleChildScrollView(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    child: Column(
-                      children: [
-                        // Available Now Section
-                        AvailableNowSection(movies: movies),
-                        const SizedBox(height: 8),
-                        ...List.generate(
-                          _selectedGenres.length,
-                          (index) => GenreMoviesSection(
-                            key: ValueKey(_selectedGenres[index]),
-                            title: _selectedGenres[index],
-                            moviesFuture: cubit.getMoviesByGenre(
-                              _selectedGenres[index].toLowerCase(),
-                            ),
-                             onSeeMorePressed: () {
-                                   widget.onSeeMore?.call(_selectedGenres[index]);
-                                },
+        body: BlocBuilder<MoviesCubit, MoviesState>(
+          builder: (context, state) {
+            if (state is MoviesLoaded) {
+              final movies = state.moviesList;
+              final cubit = context.read<MoviesCubit>();
+        
+              return RefreshIndicator(
+                color: AppColors.gold,
+                onRefresh: () async {
+                  await cubit.getMoviesList();
+        
+                  setState(() {
+                    _selectRandomGenres();
+                  });
+                },
+                child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Column(
+                    children: [
+                      // Available Now Section
+                      AvailableNowSection(movies: movies),
+                      const SizedBox(height: 8),
+                      ...List.generate(
+                        _selectedGenres.length,
+                        (index) => GenreMoviesSection(
+                          key: ValueKey(_selectedGenres[index]),
+                          title: _selectedGenres[index],
+                          moviesFuture: cubit.getMoviesByGenre(
+                            _selectedGenres[index].toLowerCase(),
                           ),
+                           onSeeMorePressed: () {
+                                 widget.onSeeMore?.call(_selectedGenres[index]);
+                              },
                         ),
-
-                        const SizedBox(height: 20),
-                      ],
-                    ),
+                      ),
+        
+                      const SizedBox(height: 20),
+                    ],
                   ),
-                );
-              } else if (state is MoviesLoading) {
-                return const Center(
-                  child: CircularProgressIndicator(color: AppColors.gold),
-                );
-              } else if (state is MoviesError) {
-                return Center(
-                  child: Text(
-                    state.message,
-                    style: const TextStyle(color: Colors.red),
-                  ),
-                );
-              } else {
-                return const SizedBox.shrink();
-              }
-            },
-          ),
+                ),
+              );
+            } else if (state is MoviesLoading) {
+              return const Center(
+                child: CircularProgressIndicator(color: AppColors.gold),
+              );
+            } else if (state is MoviesError) {
+              return Center(
+                child: Text(
+                  state.message,
+                  style: const TextStyle(color: Colors.red),
+                ),
+              );
+            } else {
+              return const SizedBox.shrink();
+            }
+          },
         ),
       ),
     );

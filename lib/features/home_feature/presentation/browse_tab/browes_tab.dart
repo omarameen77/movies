@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/core/helper/responsive.dart';
 import 'package:movies/features/home_feature/presentation/browse_tab/widget/genre_movise_grid.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -98,8 +99,9 @@ class _BrowseTabState extends State<BrowseTab>
             children: [
               // TabBar (Genres)
               SizedBox(
-                height: 50,
+                height: context.height * 0.06,
                 child: TabBar(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   controller: _tabController,
                   tabAlignment: TabAlignment.start,
                   isScrollable: true,

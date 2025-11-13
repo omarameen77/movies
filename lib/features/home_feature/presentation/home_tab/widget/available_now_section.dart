@@ -54,7 +54,7 @@ final  List<MoviesDetails> movies;
 
           //  Available Now
           Positioned(
-            top: 20,
+            top: 30,
             left: 0,
             right: 0,
             child: Center(

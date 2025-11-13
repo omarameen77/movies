@@ -35,16 +35,14 @@ class MoviesDetailsScreen extends StatelessWidget {
         ),
       ],
       child: Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MoviesDetailsSection(),
-                SizedBox(height: context.height * 0.02),
-                SimilarMoviesSection(),
-              ],
-            ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MoviesDetailsSection(),
+              SizedBox(height: context.height * 0.02),
+              SimilarMoviesSection(),
+            ],
           ),
         ),
       ),

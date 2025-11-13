@@ -29,7 +29,7 @@ Widget buildHeaderMoviesDetails({
         CustomGradientContainer(),
         // header
         Positioned(
-          top: context.height * 0.01,
+          top: context.height * 0.04,
           left: 0,
           right: 0,
           child: Row(
