@@ -13,7 +13,7 @@ import '../../business_logic/cubit/movies_cubit.dart';
 class HomeTabs extends StatefulWidget {
     final Function(String genre)? onSeeMore;
   const HomeTabs({super.key, this.onSeeMore});
-
+static const String routeName = "/HomeTabs";
   @override
   State<HomeTabs> createState() => _HomeTabsState();
 }
