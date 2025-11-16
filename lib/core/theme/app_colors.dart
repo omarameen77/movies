@@ -3,7 +3,7 @@ import 'dart:ui';
 class AppColors {
   static const backGroundColor =  Color(0xff121312);
   static const blackOne =  Color(0xff282A28);
-  static const blackTwo =  Color(0xff1A1A1A);
+  static const black =  Color(0xff1A1A1A);
   static const blackThree =  Color(0xff1D1E1D);
   static const blackFour =  Color(0xff343534);
   static const gray =  Color(0xffC6C6C6);

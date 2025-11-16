@@ -10,7 +10,7 @@ import 'features/home_feature/presentation/home_tab/home_tab.dart';
 
 class HomeNavBar extends StatefulWidget {
   const HomeNavBar({super.key});
-
+static const String routeName = '/homeNavBar';
   @override
   State<HomeNavBar> createState() => _HomeNavBarState();
 }

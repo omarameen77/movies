@@ -13,7 +13,7 @@ class BrowseTab extends StatefulWidget {
   final String? selectedGenre;
 
   const BrowseTab({super.key, this.selectedGenre});
-
+static const String routeName = "/BrowseTab";
   @override
   State<BrowseTab> createState() => _BrowseTabState();
 }
