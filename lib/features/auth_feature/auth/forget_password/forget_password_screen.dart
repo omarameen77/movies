@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies/core/theme/app_colors.dart';
 import 'package:movies/features/auth_feature/auth/validation/valisation.dart';
-import 'package:movies/features/firebase/firebase_auth.dart';
+import 'package:movies/features/auth_feature/firebase/firebase_auth.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
@@ -27,13 +27,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
     try {
       await FirebaseAuthService.sendPasswordResetEmail(email: email);
 
-      if (!mounted) return; // ✅ تأكد إن الشاشة لسه مفتوحة
+      if (!mounted) return;
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Password reset email sent")),
       );
 
-      Navigator.pop(context); // ✅ ارجع بعد الإرسال
+      Navigator.pop(context);
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -72,7 +72,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 controller: emailController,
                 validator: AppValidator.validateEmail,
-                style: const TextStyle(color: AppColors.white), // ✅ النص الأبيض داخل التكست
+                style: const TextStyle(color: AppColors.white),
                 decoration: InputDecoration(
                   hintText: "Email",
                   hintStyle: const TextStyle(color: AppColors.white),
@@ -90,7 +90,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               SizedBox(
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: resetPassword, // ✅ أنظف شكل
+                  onPressed: resetPassword,
                   child: const Text("Verify Email"),
                 ),
               ),

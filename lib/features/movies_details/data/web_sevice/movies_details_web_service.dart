@@ -4,7 +4,7 @@ import 'package:movies/features/movies_details/data/model_movies_details/similar
 
 class MoviesDetailsWebService {
   final Dio _dio;
-  static const String _baseUrl = 'https://yts.mx/api/v2';
+  static const String _baseUrl = 'https://yts.lt/api/v2';
 
   MoviesDetailsWebService({Dio? dio})
     : _dio =

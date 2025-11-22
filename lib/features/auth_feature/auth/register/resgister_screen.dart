@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:movies/core/theme/app_colors.dart';
 import 'package:movies/features/auth_feature/auth/validation/valisation.dart';
-import 'package:movies/features/firebase/firebase_auth.dart';
+import 'package:movies/features/auth_feature/firebase/firebase_auth.dart';
 
 class ResgisterScreen extends StatefulWidget {
   const ResgisterScreen({super.key});

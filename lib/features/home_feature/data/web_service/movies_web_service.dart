@@ -24,7 +24,7 @@ class MoviesWebService {
       }
 
       final response = await dio.get(
-        "https://yts.mx/api/v2/list_movies.json",
+        "https://yts.lt/api/v2/list_movies.json",
         queryParameters: queryParams,
       );
 

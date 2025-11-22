@@ -4,7 +4,7 @@ import 'package:movies/intro/onpoarding_screens/export_app.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
-static const String routeName=" /splashScreen";
+static const String routeName="/splashScreen";
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

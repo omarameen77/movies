@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
 
 Widget buildCustomRatingCard({horizontal,vertical , movie}){
-  return                 // Rating Badge (Top Left)
+  return
     Positioned(
       top: 8,
       left: 8,

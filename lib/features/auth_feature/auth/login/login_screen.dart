@@ -4,7 +4,7 @@ import 'package:movies/core/theme/app_colors.dart';
 import 'package:movies/features/auth_feature/auth/forget_password/forget_password_screen.dart';
 import 'package:movies/features/auth_feature/auth/register/resgister_screen.dart';
 import 'package:movies/features/auth_feature/auth/validation/valisation.dart';
-import 'package:movies/features/firebase/firebase_auth.dart';
+import 'package:movies/features/auth_feature/firebase/firebase_auth.dart';
 import 'package:movies/nav_bar.dart';
 
 class LoginScreen extends StatefulWidget {
