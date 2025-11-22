@@ -3,6 +3,7 @@ import 'package:movies/core/helper/responsive.dart';
 import 'package:movies/core/theme/app_colors.dart';
 import 'package:movies/core/theme/app_text_theme.dart';
 import 'package:movies/features/home_feature/data/model_home/home_model.dart';
+import 'package:movies/features/movies_details/presentation/screen/movies_details_screen.dart';
 
 import 'movies_card.dart';
 
@@ -92,7 +93,26 @@ class GenreMoviesSection extends StatelessWidget {
                   itemCount: movies.length,
                   itemBuilder: (context, index) {
                     final movie = movies[index];
-                    return buildCardMovies(context,movie);
+                    return GestureDetector(
+                      onTap: () {
+                          Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          transitionDuration: const Duration(milliseconds: 400),
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  MoviesDetailsScreen(movieId: movie.id!),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                        ),
+                      );
+                      },
+                      child: buildCardMovies(context,movie));
                   },
                 );
               },

@@ -22,10 +22,13 @@ class CastSection extends StatelessWidget {
           }
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text("Cast", style: TextStyleHelper.font18WhiteBold),
-              SizedBox(height: context.height * 0.02),
+              SizedBox(height: context.height * 0.01),
+
               ListView.separated(
+                padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: listCast.length,
@@ -60,7 +63,7 @@ class CastSection extends StatelessWidget {
                           ),
                           title: Text(
                             "Name : ${cast.name ?? "Unknown"}",
-                            style: TextStyleHelper.font15WhiteRegular
+                            style: TextStyleHelper.font15WhiteRegular,
                           ),
                           subtitle: Text(
                             "Character : ${cast.characterName ?? "No character info"}",

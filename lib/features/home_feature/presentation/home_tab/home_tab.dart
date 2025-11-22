@@ -1,3 +1,6 @@
+
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/core/theme/app_colors.dart';
@@ -5,7 +8,6 @@ import 'package:movies/features/home_feature/data/reposatory/reposatory.dart';
 import 'package:movies/features/home_feature/data/web_service/movies_web_service.dart';
 import 'package:movies/features/home_feature/presentation/home_tab/widget/available_now_section.dart';
 import 'package:movies/features/home_feature/presentation/home_tab/widget/genre_movies_section.dart';
-
 
 import '../../business_logic/cubit/movies_cubit.dart';
 

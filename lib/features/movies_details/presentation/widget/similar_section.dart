@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/core/helper/responsive.dart';
 import 'package:movies/core/theme/app_text_theme.dart';
 import 'package:movies/features/movies_details/business_logic/similar_movies_cubit/similar_movies_cubit.dart';
+import 'package:movies/features/movies_details/presentation/screen/movies_details_screen.dart';
 import 'package:movies/features/movies_details/presentation/widget/cast_section.dart';
 import 'package:movies/features/movies_details/presentation/widget/genres_section.dart';
 
@@ -32,8 +33,10 @@ class SimilarMoviesSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Similar", style: TextStyleHelper.font18WhiteBold),
-                SizedBox(height: context.height * 0.02),
+                SizedBox(height: context.height * 0.01),
+
                 GridView.builder(
+                  padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -45,25 +48,53 @@ class SimilarMoviesSection extends StatelessWidget {
                   itemCount: similar.length,
                   itemBuilder: (context, index) {
                     final movie = similar[index];
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: [
-                          Image.network(
-                            movie.mediumCoverImage ?? "",
-                            fit: BoxFit.cover,
-                            errorBuilder: (context, error, stack) => const Icon(
-                              Icons.broken_image,
-                              color: Colors.grey,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          PageRouteBuilder(
+                            transitionDuration: const Duration(
+                              milliseconds: 400,
                             ),
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) =>
+                                    MoviesDetailsScreen(movieId: movie.id!),
+                            transitionsBuilder:
+                                (
+                                  context,
+                                  animation,
+                                  secondaryAnimation,
+                                  child,
+                                ) {
+                                  return FadeTransition(
+                                    opacity: animation,
+                                    child: child,
+                                  );
+                                },
                           ),
-                        ],
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Stack(
+                          fit: StackFit.expand,
+                          children: [
+                            Image.network(
+                              movie.mediumCoverImage ?? "",
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stack) =>
+                                  const Icon(
+                                    Icons.broken_image,
+                                    color: Colors.grey,
+                                  ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
                 ),
-                SizedBox(height: context.height * 0.02),
+                SizedBox(height: context.height * 0.01),
                 Text("Summary", style: TextStyleHelper.font18WhiteBold),
                 SizedBox(height: context.height * 0.01),
                 Text(

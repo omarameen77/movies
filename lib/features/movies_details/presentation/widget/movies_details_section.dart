@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/core/consts/app_image.dart';
 import 'package:movies/core/helper/responsive.dart';
-import 'package:movies/core/shared/custom_elveted_button.dart';
+import 'package:movies/core/shared/custom_animated_elveted_button.dart';
 import 'package:movies/core/theme/app_colors.dart';
 import 'package:movies/core/theme/app_text_theme.dart';
 import 'package:movies/features/movies_details/business_logic/movies_details_cubit/movice_details_cubit.dart';
 import 'package:movies/features/movies_details/presentation/screen/watch_web_viewer.dart';
 import 'package:movies/features/movies_details/presentation/widget/header_details_widget.dart';
 import 'package:movies/features/movies_details/presentation/widget/viewe_screenshot_widget.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class MoviesDetailsSection extends StatelessWidget {
   const MoviesDetailsSection({super.key});

@@ -28,6 +28,6 @@ class AppRoutes {
     forgetPassword: (context) => const ForgetPasswordScreen(),
     homeNav: (context) => const HomeNavBar(),
     homeTab: (context) => const HomeTabs(),
-    browseTab: (context) => const BrowseTab(),
+    browseTab: (context) =>  BrowseTab(),
   };
 }

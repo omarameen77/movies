@@ -1,8 +1,9 @@
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:movies/core/helper/responsive.dart';
+import 'package:movies/features/profile/profile.dart';
+import 'package:movies/features/search/presentation/screens/search.dart';
 
 import 'core/theme/app_colors.dart';
 import 'features/home_feature/presentation/browse_tab/browes_tab.dart';
@@ -10,7 +11,7 @@ import 'features/home_feature/presentation/home_tab/home_tab.dart';
 
 class HomeNavBar extends StatefulWidget {
   const HomeNavBar({super.key});
-static const String routeName = '/homeNavBar';
+  static const String routeName = '/homeNavBar';
   @override
   State<HomeNavBar> createState() => _HomeNavBarState();
 }
@@ -32,15 +33,11 @@ class _HomeNavBarState extends State<HomeNavBar> {
       // Home Screen
       HomeTabs(onSeeMore: navigateToBrowse),
       // Search Screen
-      Center(child: Text("Search Screen")),
-
-     // Browse Screen
-      BrowseTab(
-        selectedGenre: selectedGenre,
-        key: ValueKey(selectedGenre),
-      ),
+       SearchScreen(),
+      // Browse Screen
+      BrowseTab(selectedGenre: selectedGenre, key: ValueKey(selectedGenre)),
       // Profile Screen
-      Center(child: Text("Profile Screen")),
+      ProfileScreen(),
     ];
 
     return Scaffold(
@@ -111,18 +108,18 @@ class _HomeNavBarState extends State<HomeNavBar> {
               shape: BoxShape.circle,
               border: isSelected
                   ? Border.all(
-                color: AppColors.gold.withOpacity(0.4),
-                width: 1.5,
-              )
+                      color: AppColors.gold.withOpacity(0.4),
+                      width: 1.5,
+                    )
                   : null,
               boxShadow: isSelected
                   ? [
-                BoxShadow(
-                  color: AppColors.gold.withOpacity(0.3),
-                  blurRadius: 12,
-                  spreadRadius: 2,
-                ),
-              ]
+                      BoxShadow(
+                        color: AppColors.gold.withOpacity(0.3),
+                        blurRadius: 12,
+                        spreadRadius: 2,
+                      ),
+                    ]
                   : null,
             ),
             child: Icon(
