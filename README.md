@@ -97,13 +97,13 @@ Omar Ameen
 
 
 <p align="left">
-  <img src="shots/shot1.jpeg" width="120"/>
-  <img src="shots/shot2.jpeg" width="120"/>
-  <img src="shots/shot3.jpeg" width="120"/>
-  <img src="shots/shot4.jpeg" width="120"/>
-  <img src="shots/shot5.jpeg" width="120"/>
-  <img src="shots/shot6.jpeg" width="120"/>
-   <img src="shots/shot7.jpeg" width="120"/>
+  <img src="shots/shot1.jpeg" width="110"/>
+  <img src="shots/shot2.jpeg" width="110"/>
+  <img src="shots/shot3.jpeg" width="110"/>
+  <img src="shots/shot4.jpeg" width="110"/>
+  <img src="shots/shot5.jpeg" width="110"/>
+  <img src="shots/shot6.jpeg" width="110"/>
+   <img src="shots/shot7.jpeg" width="110"/>
 </p>
 <p align="left">
   <img src="shots/shot8.jpeg" width="120"/>
