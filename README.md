@@ -74,13 +74,10 @@ Run these commands in your terminal:
 ```bash
 git clone https://github.com/omarameen77/movies.git
 ```
-#### 2. Cd Over
-```bash
-cd movies
-```
-#### 3 .Run Pub
+#### 2 .Run Pub
 ```bash
 flutter pub get
+flutter run
 ```
 ## Help
 
